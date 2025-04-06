@@ -1,0 +1,361 @@
+/* Reset and Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Container styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  width: 50px;
+  height: 3px;
+  background-color: #1abc9c;
+  display: block;
+  margin: 0.5rem auto 0;
+}
+
+/* Header */
+.header {
+  background-color: #2c3e50;
+  padding: 1.5rem 0;
+  color: white;
+  text-align: center;
+}
+
+.header__title {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.header__subtitle {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-top: 0.5rem;
+}
+
+/* Weather Section */
+.weather-container {
+  background-color: #f4f9ff;
+  padding: 20px 0;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.weather-icon img {
+  width: 100px;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.temperature-value p {
+  font-size: 4em;
+  color: #293251;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.temperature-value p:hover {
+  color: #4070f4;
+}
+
+.temperature-value span {
+  font-size: 0.6em;
+}
+
+.temperature-description p {
+  font-size: 1.2em;
+  color: #293251;
+  margin-bottom: 10px;
+}
+
+.location p {
+  font-size: 0.9em;
+  color: #293251;
+}
+
+/* Skills Section */
+.skills__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.skills__box {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skills__subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.skills__name {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.skills__img img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Work Section */
+.portfolio__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.portfolio__img {
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.portfolio__img img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.portfolio__link-name {
+  font-size: 1.1rem;
+  color: #293251;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.portfolio__link-name:hover {
+  color: #4070f4;
+}
+
+/* Work Items */
+.work__item {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.work__item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.work__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1abc9c;
+}
+
+.work__subtitle {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.work__date {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+.work__tasks li {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Contact Section */
+.contact__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 600px;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact__input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.contact__input:focus {
+  border-color: #4070f4;
+}
+
+.contact__button {
+  padding: 12px 20px;
+  background-color: #4070f4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact__button:hover {
+  background-color: #293251;
+}
+
+/* Footer Section */
+.footer {
+  background-color: #2c3e50;
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.footer__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.footer__description {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer__social {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.footer__link {
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer__link:hover {
+  color: #1abc9c;
+}
+
+/* Reusable Utilities */
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: #1abc9c;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #1abc9c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #16a085;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .work__title {
+    font-size: 1.25rem;
+  }
+
+  .footer__title {
+    font-size: 1.25rem;
+  }
+
+  .portfolio__container {
+    grid-template-columns: 1fr;
+  }
+
+  .skills__container {
+    grid-template-columns: 1fr;
+  }
+
+  .contact__form {
+    padding: 20px;
+    width: 90%;
+  }
+
+  .contact__input,
+  .contact__button {
+    font-size: 0.9rem;
+  }
+}
