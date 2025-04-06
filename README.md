@@ -1,6 +1,7 @@
 # portfolio-project
 🌟 Teja Maheshwara – AI-Powered Portfolio
 A modern, AI-enhanced developer portfolio built using Vue.js, showcasing web development, AI/ML projects, and creative UI/UX.
+🌍 Live: [portfolio-project-tejamah.vercel.app](https://portfolio-project-tejamah.vercel.app)
 
 
 🔥 Preview
