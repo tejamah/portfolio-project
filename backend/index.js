@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-app.use('/api/contact', contactRoutes);
+app.use('/api/', contactRoutes);
 
 app.get('/', (req, res) => {
   res.send('Portfolio backend is running 🚀');

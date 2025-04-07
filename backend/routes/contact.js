@@ -1,37 +1,31 @@
-// backend/routes/contact.js
-
-const express = require('express');
-const nodemailer = require('nodemailer');
+const express = require("express");
 const router = express.Router();
+const nodemailer = require("nodemailer");
+require("dotenv").config();
 
-router.post('/', async (req, res) => {
+router.post("/contact", async (req, res) => {
   const { name, email, message } = req.body;
 
-  if (!name || !email || !message) {
-    return res.status(400).json({ error: 'All fields are required.' });
-  }
-
   const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    service: "gmail",
     auth: {
       user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
-    },
+      pass: process.env.EMAIL_PASS
+    }
   });
 
   const mailOptions = {
     from: email,
     to: process.env.EMAIL_USER,
-    subject: `New Portfolio Message from ${name}`,
-    text: `From: ${name}\nEmail: ${email}\n\n${message}`,
+    subject: `Portfolio Contact - ${name}`,
+    text: `From: ${name} <${email}>\n\nMessage:\n${message}`
   };
 
   try {
     await transporter.sendMail(mailOptions);
-    res.status(200).json({ success: 'Message sent!' });
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: 'Something went wrong. Try again later.' });
+    res.status(200).json({ message: "Email sent successfully!" });
+  } catch (error) {
+    res.status(500).json({ message: "Failed to send email", error });
   }
 });
 
