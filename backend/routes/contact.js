@@ -1,41 +1,27 @@
-const express = require("express");
-const router = express.Router();
-const nodemailer = require("nodemailer");
-
-router.post("/", async (req, res) => {
-  const { name, email, message } = req.body;
-
-  try {
-    // Create a test account
-    const testAccount = await nodemailer.createTestAccount();
-
+router.post("/contact", async (req, res) => {
+    const { name, email, message } = req.body;
+  
     const transporter = nodemailer.createTransport({
-      host: "smtp.ethereal.email",
-      port: 587,
+      service: "gmail",
       auth: {
-        user: testAccount.user,
-        pass: testAccount.pass,
-      },
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
+      }
     });
-
+  
     const mailOptions = {
-      from: `"${name}" <${email}>`,
-      to: testAccount.user, // Inbox will be accessible via test account
+      from: email,
+      to: process.env.EMAIL_USER,
       subject: `Portfolio Contact - ${name}`,
-      text: message,
+      text: `From: ${name} <${email}>\n\nMessage:\n${message}`
     };
-
-    const info = await transporter.sendMail(mailOptions);
-
-    console.log("Preview URL:", nodemailer.getTestMessageUrl(info)); // 🔗 log URL to view email
-    res.status(200).json({
-      message: "Email sent successfully (ethereal)!",
-      previewUrl: nodemailer.getTestMessageUrl(info),
-    });
-  } catch (error) {
-    console.error("❌ Email sending error:", error);
-    res.status(500).json({ error: "Something went wrong. Try again later." });
-  }
-});
-
-module.exports = router;
+  
+    try {
+      await transporter.sendMail(mailOptions);
+      res.status(200).json({ message: "Email sent successfully!" });
+    } catch (error) {
+      console.error("❌ Email sending error:", error); // 🛠 log the real error
+      res.status(500).json({ error: "Something went wrong. Try again later." });
+    }
+  });
+  
