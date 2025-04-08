@@ -1,28 +1,28 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const { Resend } = require('resend');
-require('dotenv').config();
+require("dotenv").config();
+const { Resend } = require("resend");
 
-const resend = new Resend(process.env.RESEND_API_KEY); // store this key in .env
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-router.post('/', async (req, res) => {
+router.post("/", async (req, res) => {
   const { name, email, message } = req.body;
 
   try {
-    const response = await resend.emails.send({
-      from: 'Teja Portfolio <onboarding@resend.dev>',  // Verified sender
-      to: process.env.EMAIL_RECEIVER,                   // Your email
-      subject: `📬 Message from ${name}`,
-      html: `
-        <strong>Name:</strong> ${name}<br>
-        <strong>Email:</strong> ${email}<br>
-        <strong>Message:</strong><br>${message}
-      `
+    const result = await resend.emails.send({
+      from: "Teja Portfolio <onboarding@resend.dev>",
+      to: [process.env.EMAIL_RECEIVER],
+      subject: `New Message from ${name}`,
+      text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
     });
 
-    res.status(200).json({ message: 'Email sent successfully!', id: response.id });
+    if (result.error) {
+      return res.status(500).json({ message: "Resend Error", error: result.error });
+    }
+
+    res.status(200).json({ message: "Email sent successfully via Resend!" });
   } catch (error) {
-    res.status(500).json({ message: 'Failed to send email', error });
+    res.status(500).json({ message: "Something went wrong", error });
   }
 });
 
