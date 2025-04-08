@@ -55,12 +55,17 @@ export default {
 }
 
 .about__img {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
+  width: 220px;
+  height: auto;
+  border-radius: 12px; /* Changed from 50% to modern rounded style */
   object-fit: cover;
   border: 3px solid #4070f4;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.about__img:hover {
+  transform: scale(1.03);
 }
 
 .about__content {

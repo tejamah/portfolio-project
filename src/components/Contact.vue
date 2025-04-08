@@ -1,43 +1,53 @@
 <template>
   <section class="contact section" id="contact">
-    <h2 class="section-title" data-aos="fade-up">📬 Contact Me</h2>
-    <form class="contact__form" @submit.prevent="handleSubmit">
-      <input v-model="form.name" type="text" placeholder="Your Name" required />
-      <input v-model="form.email" type="email" placeholder="Your Email" required />
-      <textarea v-model="form.message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit" class="btn">Send Message</button>
-      <p v-if="successMsg" class="success">{{ successMsg }}</p>
-      <p v-if="errorMsg" class="error">{{ errorMsg }}</p>
+    <h2 class="section-title">
+      <span class="emoji">📬</span> Contact Me
+    </h2>
+    <form class="contact-form" @submit.prevent="handleSubmit">
+      <input type="text" v-model="name" placeholder="Your Name" required />
+      <input type="email" v-model="email" placeholder="Your Email" required />
+      <textarea v-model="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
     </form>
+    <p v-if="statusMessage" class="status-message">{{ statusMessage }}</p>
   </section>
 </template>
 
 <script>
-import axios from 'axios';
-
 export default {
-  name: "Contact",
   data() {
     return {
-      form: {
-        name: '',
-        email: '',
-        message: '',
-      },
-      successMsg: '',
-      errorMsg: '',
+      name: "",
+      email: "",
+      message: "",
+      statusMessage: "",
     };
   },
   methods: {
     async handleSubmit() {
       try {
-        const response = await axios.post('https://portfolio-project-backend-8qk9.onrender.com/api/contact', this.form);
-        this.successMsg = "✅ Message sent successfully!";
-        this.errorMsg = "";
-        this.form.name = this.form.email = this.form.message = '';
+        const response = await fetch("https://portfolio-project-backend-8qk9.onrender.com/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: this.name,
+            email: this.email,
+            message: this.message,
+          }),
+        });
+
+        const result = await response.json();
+        this.statusMessage = result.message;
+
+        if (response.ok) {
+          this.name = "";
+          this.email = "";
+          this.message = "";
+        }
       } catch (error) {
-        this.errorMsg = "❌ Failed to send message. Try again later.";
-        this.successMsg = "";
+        this.statusMessage = "Something went wrong. Try again later.";
       }
     },
   },
@@ -45,39 +55,68 @@ export default {
 </script>
 
 <style scoped>
+.section {
+  padding: 60px 20px;
+  background: #fff;
+  text-align: center;
+}
+
 .section-title {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-.contact__form {
-  max-width: 500px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.contact__form input,
-.contact__form textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-.btn {
-  background-color: #4070f4;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 25px;
+  font-size: 2.5rem;
   font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 40px;
+}
+
+.emoji {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  background: #f9f9f9;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.contact-form textarea {
+  height: 120px;
+  resize: none;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 14px;
+  background-color: #7300ff;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-.success {
-  color: green;
-  text-align: center;
+
+.contact-form button:hover {
+  background-color: #5900cc;
 }
-.error {
-  color: red;
-  text-align: center;
+
+.status-message {
+  margin-top: 15px;
+  color: #444;
+  font-weight: 500;
 }
 </style>
