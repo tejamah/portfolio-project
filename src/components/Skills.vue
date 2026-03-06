@@ -40,13 +40,36 @@ export default {
           icon: "fas fa-brain",
           list: [
             "Python",
-            "FLAN-T5",
-            "LoRA",
-            "Mistral 7B",
+            "PyTorch",
+            "TensorFlow",
+            "Scikit-learn",
             "Hugging Face",
+            "FLAN-T5",
+            "Mistral 7B",
+            "LoRA",
+            "RAG",
+            "LangChain",
+            "LLM Fine-Tuning",
             "Pandas",
             "NumPy",
             "Seaborn",
+            "MLflow"
+          ],
+        },
+        {
+          category: "Backend Engineering",
+          icon: "fas fa-server",
+          list: [
+            "Java",
+            "Spring Boot",
+            "FastAPI",
+            "Flask",
+            "REST APIs",
+            "API Architecture",
+            "Distributed Systems",
+            "Microservices",
+            "SQL",
+            "Ruby"
           ],
         },
         {
@@ -56,31 +79,45 @@ export default {
             "HTML",
             "CSS",
             "JavaScript",
-            "Vue.js",
-            "React",
-            "Node.js",
             "TypeScript",
-            "FastAPI",
+            "React",
+            "Vue.js",
+            "Node.js"
           ],
         },
         {
           category: "Databases",
           icon: "fas fa-database",
           list: [
-            "MongoDB",
-            "MySQL",
-            "Firebase",
             "PostgreSQL",
+            "MySQL",
+            "MongoDB",
+            "DynamoDB"
           ],
         },
         {
-          category: "Cloud & DevOps",
+          category: "Cloud, DevOps & Tools",
           icon: "fas fa-cloud",
           list: [
-            "Docker",
             "AWS",
-            "Google Cloud",
+            "Docker",
             "Kubernetes",
+            "Jenkins",
+            "Airflow",
+            "Git",
+            "GitHub"
+          ],
+        },
+        {
+          category: "Systems & Operating Environments",
+          icon: "fas fa-desktop",
+          list: [
+            "Linux",
+            "Unix",
+            "Windows",
+            "Database Performance Tuning",
+            "Containerized Deployments",
+            "High-Concurrency Systems"
           ],
         },
       ],
@@ -195,4 +232,4 @@ export default {
     padding: 7px 12px;
   }
 }
-</style>
+</style>  
