@@ -1,24 +1,21 @@
 <template>
-  <section class="education">
-    <div class="container">
-      <div class="app-title">
-        <p>Education</p>
-      </div>
-      <div class="education-container">
-        <!-- Loop through education data -->
-        <div
-          v-for="(item, index) in education"
-          :key="index"
-          class="education-item"
-        >
-          <div class="education-content">
-            <div class="education-img">
-              <img :src="item.img" :alt="`${item.institution} Logo`" />
-            </div>
-            <p class="education-institution">{{ item.institution }}</p>
-            <p class="education-degree">{{ item.degree }}</p>
-            <p class="education-year">Graduated: {{ item.year }}</p>
-          </div>
+  <section class="education section" id="education">
+    <h2 class="section-title" data-aos="fade-up">🎓 Education</h2>
+
+    <div class="education-container" data-aos="fade-up" data-aos-delay="100">
+      <div
+        v-for="(item, index) in education"
+        :key="index"
+        class="education-card"
+      >
+        <div class="education-logo">
+          <img :src="item.img" :alt="`${item.institution} logo`" />
+        </div>
+
+        <div class="education-content">
+          <h3 class="education-institution">{{ item.institution }}</h3>
+          <p class="education-degree">{{ item.degree }}</p>
+          <p class="education-year">{{ item.year }}</p>
         </div>
       </div>
     </div>
@@ -39,19 +36,19 @@ export default {
           img: NyitImage,
           institution: "New York Institute of Technology",
           degree: "Master of Science in Computer and Information Science",
-          year: 2024,
+          year: "2024",
         },
         {
           img: ATRIImage,
           institution: "Aurora Technological and Research Institute",
           degree: "Bachelor of Technology in Computer Science",
-          year: 2020,
+          year: "2020",
         },
         {
           img: SchoolImage,
           institution: "MJPBCWRES School",
           degree: "High School",
-          year: 2014,
+          year: "2014",
         },
       ],
     };
@@ -60,86 +57,97 @@ export default {
 </script>
 
 <style scoped>
-/* General container styles */
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 20px auto;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.education {
+  padding: 60px 20px;
+  background: #f8fbff;
 }
 
-/* Title styles */
-.app-title {
-  background-color: #e3f2fd;
-  padding: 15px 0;
-  border-radius: 10px 10px 0 0;
+.section-title {
   text-align: center;
-}
-
-.app-title p {
-  font-size: 1.6em;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 40px;
   color: #2c3e50;
-  font-weight: bold;
-  margin: 0;
 }
 
-/* Education container */
 .education-container {
-  padding: 20px;
-  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  gap: 24px;
 }
 
-/* Education item styles */
-.education-item {
-  margin-bottom: 30px;
+.education-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.education-logo {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  background: #f4f8ff;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.education-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .education-content {
-  padding: 10px 20px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  background-color: #fff;
-}
-
-.education-img img {
-  width: 60px;
-  height: auto;
-  display: block;
-  margin: 0 auto 10px;
+  flex: 1;
 }
 
 .education-institution {
-  font-size: 1.2rem;
-  color: #2c3e50;
-  font-weight: bold;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #293251;
+  margin-bottom: 8px;
 }
 
 .education-degree {
   font-size: 1rem;
-  color: #34495e;
+  color: #555;
+  margin-bottom: 6px;
+  line-height: 1.6;
 }
 
 .education-year {
-  font-size: 0.9rem;
-  color: #7f8c8d;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #4070f4;
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
-  .container {
-    width: 100%;
-    padding: 15px;
+  .section-title {
+    font-size: 2rem;
   }
 
-  .education-content {
-    padding: 15px;
+  .education-card {
+    flex-direction: column;
+    text-align: center;
   }
 
-  .education-img img {
-    width: 50px;
+  .education-logo {
+    width: 70px;
+    height: 70px;
   }
 }
 </style>
