@@ -1,10 +1,8 @@
 <template>
   <section class="about section" id="about">
-    <h2 class="section-title" data-aos="fade-up">👨‍💻 About Me</h2>
+    <h2 class="section-title" data-aos="fade-up">About Me</h2>
 
     <div class="about__container" data-aos="fade-up" data-aos-delay="100">
-
-      <!-- Profile Image -->
       <div class="about__image">
         <img
           src="@/assets/Images/Teja_Profile_pic.jpg"
@@ -13,41 +11,40 @@
         />
       </div>
 
-      <!-- About Text -->
       <div class="about__content">
         <p>
-          Backend Engineer with <strong>5+ years of experience</strong> building
-          scalable, production-grade distributed systems across fintech and
-          healthcare domains. Specializing in API architecture, database
-          performance optimization, and containerized cloud deployments.
+          Senior Software Engineer with <strong>5+ years of experience</strong>
+          designing scalable Python-based backend systems, distributed APIs,
+          microservices, and AI-powered enterprise applications.
         </p>
 
         <p>
-          Proven track record of improving system reliability, throughput, and
-          reducing latency under high-concurrency workloads.
+          I work across healthcare, fintech, and intelligent automation, with
+          hands-on depth in <strong>FastAPI, Flask, RESTful API design, AWS,
+          Docker, CI/CD, and cloud-native deployment patterns.</strong>
         </p>
 
         <p>
-          I’ve fine-tuned and deployed <strong>50+ AI models</strong> on
-          platforms like
+          My AI work includes conversational systems, RAG pipelines, AI agents,
+          multimodal workflows, LoRA fine-tuning, and applied LLM integrations
+          using platforms like
           <a
             href="https://huggingface.co/teja00007"
             target="_blank"
+            rel="noopener"
             class="link"
           >
             Hugging Face
           </a>,
-          integrating them into real-time applications using
-          <strong>FastAPI, Vue.js, and modern AI frameworks.</strong>
+          LangChain, LLaMA 2, Mistral, FLAN-T5, and Amazon Bedrock.
         </p>
 
         <p>
-          My mission is to build AI products that are not only innovative but
-          also impactful — from conversational AI assistants to intelligent
-          summarization platforms.
+          I am currently pursuing a PhD in Computer Science at Pace University,
+          focused on Artificial Intelligence and Systems, while researching
+          reliable multimodal AI and human-centered intelligent systems.
         </p>
       </div>
-
     </div>
   </section>
 </template>
@@ -59,26 +56,20 @@ export default {
 </script>
 
 <style scoped>
-
-.section-title {
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 50px;
-  color: #2c3e50;
-}
-
 .about__container {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 40px;
-  max-width: 1100px;
+  max-width: 1180px;
   margin: auto;
-  padding: 0 20px;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.76);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(16px);
 }
-
-/* IMAGE SECTION */
 
 .about__image {
   flex: 1;
@@ -87,11 +78,12 @@ export default {
 }
 
 .about__img {
-  width: 280px;
-  border-radius: 16px;
+  width: min(300px, 74vw);
+  aspect-ratio: 1;
+  border-radius: 28px;
   object-fit: cover;
-  border: 3px solid #4070f4;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  border: 8px solid #ffffff;
+  box-shadow: var(--shadow);
   transition: transform 0.3s ease;
 }
 
@@ -99,46 +91,37 @@ export default {
   transform: scale(1.05);
 }
 
-/* TEXT SECTION */
-
 .about__content {
   flex: 2;
   font-size: 1.05rem;
-  color: #444;
+  color: var(--muted);
   line-height: 1.8;
 }
 
 .about__content strong {
-  color: #2c3e50;
+  color: var(--ink);
 }
 
 .link {
-  color: #4070f4;
+  color: var(--blue);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 800;
 }
 
 .link:hover {
   text-decoration: underline;
 }
 
-/* MOBILE */
-
 @media (max-width: 768px) {
-
   .about__container {
     flex-direction: column;
     text-align: center;
+    padding: 22px;
   }
 
   .about__content {
     text-align: center;
   }
 
-  .about__img {
-    width: 220px;
-  }
-
 }
-
 </style>

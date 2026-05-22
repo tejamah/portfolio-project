@@ -1,8 +1,13 @@
 <template>
   <section class="contact section" id="contact">
-    <h2 class="section-title">
-      <span class="emoji">📬</span> Contact Me
-    </h2>
+    <h2 class="section-title">Contact</h2>
+
+    <div class="contact__details">
+      <a href="mailto:tm55063p@pace.edu">tm55063p@pace.edu</a>
+      <a href="tel:+12014863082">201-486-3082</a>
+      <span>Bayonne, NJ 07002</span>
+    </div>
+
     <form class="contact-form" @submit.prevent="handleSubmit">
       <input type="text" v-model="name" placeholder="Your Name" required />
       <input type="email" v-model="email" placeholder="Your Email" required />
@@ -15,6 +20,7 @@
 
 <script>
 export default {
+  name: "Contact",
   data() {
     return {
       name: "",
@@ -56,30 +62,33 @@ export default {
 
 <style scoped>
 .section {
-  padding: 60px 20px;
-  background: #fff;
+  background: transparent;
   text-align: center;
 }
 
-.section-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #2c3e50;
-  margin-bottom: 40px;
+.contact__details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 20px;
+  margin: 0 auto 28px;
+  color: var(--muted);
+  font-weight: 800;
 }
 
-.emoji {
-  display: inline-block;
-  margin-right: 8px;
+.contact__details a {
+  color: var(--blue);
 }
 
 .contact-form {
   max-width: 500px;
   margin: 0 auto;
-  background: #f9f9f9;
+  background: rgba(255, 255, 255, 0.78);
   padding: 25px 30px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.76);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(16px);
 }
 
 .contact-form input,
@@ -87,9 +96,10 @@ export default {
   width: 100%;
   padding: 12px 16px;
   margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
   font-size: 1rem;
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .contact-form textarea {
@@ -100,23 +110,23 @@ export default {
 .contact-form button {
   width: 100%;
   padding: 14px;
-  background-color: #7300ff;
+  background: linear-gradient(135deg, var(--blue), var(--cyan));
   color: #fff;
   font-size: 1rem;
   font-weight: bold;
   border: none;
-  border-radius: 8px;
+  border-radius: 14px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .contact-form button:hover {
-  background-color: #5900cc;
+  background: linear-gradient(135deg, var(--blue), var(--mint));
 }
 
 .status-message {
   margin-top: 15px;
-  color: #444;
+  color: var(--muted);
   font-weight: 500;
 }
 </style>

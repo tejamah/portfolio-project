@@ -1,6 +1,6 @@
 <template>
   <section class="education section" id="education">
-    <h2 class="section-title" data-aos="fade-up">🎓 Education</h2>
+    <h2 class="section-title" data-aos="fade-up">Education</h2>
 
     <div class="education-container" data-aos="fade-up" data-aos-delay="100">
       <div
@@ -16,8 +16,17 @@
           <h3 class="education-institution">{{ item.institution }}</h3>
           <p class="education-degree">{{ item.degree }}</p>
           <p class="education-year">{{ item.year }}</p>
+          <p v-if="item.location" class="education-location">{{ item.location }}</p>
         </div>
       </div>
+    </div>
+
+    <div class="coursework" data-aos="fade-up" data-aos-delay="150">
+      <h3>Relevant Coursework</h3>
+      <p>
+        Advanced Algorithms | Artificial Intelligence | Machine Learning |
+        Distributed Systems | Database Systems | Software Engineering
+      </p>
     </div>
   </section>
 </template>
@@ -39,20 +48,23 @@ export default {
           degree:
             "PhD in Computer Science (Focus: Artificial Intelligence & Systems)",
           year: "Expected 2030",
+          location: "New York, NY",
         },
         {
           img: NyitImage,
           institution: "New York Institute of Technology",
           degree:
-            "Master of Science in Computer & Information Sciences | GPA: 3.27",
+            "Master of Science in Computer & Information Sciences | GPA: 3.57",
           year: "2024",
+          location: "New York, NY",
         },
         {
           img: ATRIImage,
-          institution: "Aurora Technological and Research Institute",
+          institution: "Aurora's Technological & Research Institute",
           degree:
             "Bachelor of Technology in Computer Science & Engineering | GPA: 3.52",
           year: "2020",
+          location: "Hyderabad, India",
         },
       ],
     };
@@ -62,20 +74,11 @@ export default {
 
 <style scoped>
 .education {
-  padding: 60px 20px;
-  background: #f8fbff;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 40px;
-  color: #2c3e50;
+  background: transparent;
 }
 
 .education-container {
-  max-width: 1000px;
+  max-width: 1040px;
   margin: 0 auto;
   display: grid;
   gap: 24px;
@@ -85,24 +88,26 @@ export default {
   display: flex;
   align-items: center;
   gap: 20px;
-  background: #ffffff;
-  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid rgba(255, 255, 255, 0.76);
+  border-radius: 22px;
   padding: 22px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-soft);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(16px);
 }
 
 .education-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow);
 }
 
 .education-logo {
   flex-shrink: 0;
   width: 80px;
   height: 80px;
-  background: #f4f8ff;
-  border-radius: 14px;
+  background: #ffffff;
+  border-radius: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -121,29 +126,48 @@ export default {
 
 .education-institution {
   font-size: 1.25rem;
-  font-weight: 700;
-  color: #293251;
+  font-weight: 850;
+  color: var(--ink);
   margin-bottom: 8px;
 }
 
 .education-degree {
   font-size: 1rem;
-  color: #555;
+  color: var(--muted);
   margin-bottom: 6px;
   line-height: 1.6;
 }
 
-.education-year {
+.education-year,
+.education-location {
   font-size: 0.95rem;
-  font-weight: 600;
-  color: #4070f4;
+  font-weight: 800;
+  color: var(--blue);
+  margin-bottom: 4px;
+}
+
+.coursework {
+  max-width: 1000px;
+  margin: 28px auto 0;
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid rgba(255, 255, 255, 0.76);
+  border-radius: 22px;
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+}
+
+.coursework h3 {
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+
+.coursework p {
+  color: var(--muted);
+  line-height: 1.7;
 }
 
 @media (max-width: 768px) {
-  .section-title {
-    font-size: 2rem;
-  }
-
   .education-card {
     flex-direction: column;
     text-align: center;

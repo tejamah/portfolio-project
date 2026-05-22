@@ -1,20 +1,24 @@
 <template>
   <header class="header">
-    <div class="logo">Teja Portfolio</div>
+    <a href="#home" class="logo">Teja Maheshwara</a>
+
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#portfolio">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
     <div class="social-icons">
-      <a href="https://www.linkedin.com/in/teja-maheshwara/" target="_blank" aria-label="LinkedIn">
+      <a href="https://www.linkedin.com/in/teja-maheshwara/" target="_blank" rel="noopener" aria-label="LinkedIn">
         <i class="fab fa-linkedin"></i>
       </a>
-      <a href="https://github.com/tejamah" target="_blank" aria-label="GitHub">
+      <a href="https://github.com/tejamah" target="_blank" rel="noopener" aria-label="GitHub">
         <i class="fab fa-github"></i>
       </a>
-      <a href="https://huggingface.co/teja00007" target="_blank" aria-label="Hugging Face">
-        <img
-          src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg"
-          alt="Hugging Face"
-          class="hug-icon"
-        />
+      <a href="mailto:tm55063p@pace.edu" aria-label="Email">
+        <i class="fas fa-envelope"></i>
       </a>
     </div>
   </header>
@@ -28,45 +32,91 @@ export default {
 
 <style scoped>
 .header {
+  position: sticky;
+  top: 14px;
+  z-index: 20;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ffffff;
-  padding: 10px 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  gap: 24px;
+  max-width: 1180px;
+  margin: 14px auto 0;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.78);
+  padding: 10px 14px 10px 20px;
+  box-shadow: 0 18px 42px rgba(22, 32, 51, 0.1);
+  backdrop-filter: blur(18px);
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #1a1a1a;
+  font-size: 1.08rem;
+  font-weight: 900;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  color: var(--muted);
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+.nav-links a,
+.social-icons a {
+  border-radius: 999px;
+  transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-links a {
+  padding: 8px 12px;
+}
+
+.nav-links a:hover,
+.social-icons a:hover {
+  color: var(--blue);
+  background: rgba(37, 99, 235, 0.08);
 }
 
 .social-icons {
   display: flex;
-  gap: 16px;
+  gap: 6px;
   align-items: center;
 }
 
 .social-icons a {
-  color: #333;
-  font-size: 1.3rem;
-  transition: color 0.3s ease;
+  display: inline-grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  color: var(--ink);
+  font-size: 1.05rem;
 }
 
 .social-icons a:hover {
-  color: #654ef0;
+  transform: translateY(-1px);
 }
 
-.hug-icon {
-  width: 22px;
-  height: 22px;
-  object-fit: contain;
-  filter: grayscale(0.2);
-  transition: filter 0.3s ease;
-}
+@media (max-width: 860px) {
+  .header {
+    top: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    border-radius: 0 0 22px 22px;
+    padding: 12px 16px;
+  }
 
-.hug-icon:hover {
-  filter: grayscale(0);
+  .nav-links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 0.88rem;
+  }
 }
 </style>
