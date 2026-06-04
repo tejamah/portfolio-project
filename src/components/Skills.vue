@@ -60,6 +60,20 @@ export default {
           ],
         },
         {
+          category: "Human-Centered AI Research",
+          icon: "fas fa-people-arrows",
+          list: [
+            "Human-Machine Interaction",
+            "Telepresence Systems",
+            "Embodiment",
+            "Virtual Reality",
+            "Multimodal Data Analysis",
+            "Presence Evaluation",
+            "Human Performance Metrics",
+            "AI Systems Reliability",
+          ],
+        },
+        {
           category: "Cloud & AWS",
           icon: "fas fa-cloud",
           list: [
