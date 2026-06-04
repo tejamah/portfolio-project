@@ -43,6 +43,17 @@ export default {
     return {
       roles: [
         {
+          company:
+            "2026 IEEE International Conference on Human-Machine Systems (ICHMS), NTU Singapore",
+          title: "Reviewer - Internship",
+          location: "Remote",
+          period: "May 2026 - Present",
+          points: [
+            "Invited reviewer evaluating research submissions in human-machine interaction, telepresence systems, virtual reality, embodiment, and intelligent systems.",
+            "Provided technical assessments of methodology, novelty, scientific rigor, and relevance to conference themes.",
+          ],
+        },
+        {
           company: "Algorithm",
           title: "Full Stack Developer",
           location: "Jersey City, NJ",

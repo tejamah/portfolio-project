@@ -2,17 +2,20 @@
   <section class="home section" id="home">
     <div class="home__container" data-aos="fade-up">
       <div class="home__text">
-        <p class="home__eyebrow">AI systems, backend platforms, and cloud-native products</p>
+        <p class="home__eyebrow">New York City Metropolitan Area</p>
+        <div class="home__identity">
+          <span class="home__name">Teja Maheshwara</span>
+        </div>
         <h1 class="home__greeting">
-          Building reliable AI software from backend architecture to intelligent user experiences.
+          Reviewer at IEEE ICHMS 2026 | PhD Researcher in Human-Machine Interaction, Telepresence, Embodiment, and AI Systems
         </h1>
         <vue-typed-js :strings="typedRoles" typeSpeed="60" backSpeed="40" loop>
           <h2 class="home__roles"><span ref="typed"></span></h2>
         </vue-typed-js>
         <p class="home__summary">
-          Senior Software Engineer building scalable Python backends, cloud-native
-          microservices, and production-ready GenAI applications across healthcare,
-          fintech, and intelligent automation.
+          Senior Software Engineer and Computer Science PhD researcher focused on
+          scalable human-centric AI, RAG systems, LLM applications, multimodal
+          AI reliability, and production backend platforms.
         </p>
         <div class="home__actions">
           <a href="#portfolio" class="btn">Explore Projects</a>
@@ -20,15 +23,16 @@
         </div>
         <div class="home__metrics" aria-label="Professional highlights">
           <span><strong>5+</strong> years</span>
+          <span><strong>4K</strong> LinkedIn followers</span>
           <span><strong>30-40%</strong> faster APIs</span>
-          <span><strong>PhD</strong> AI & Systems</span>
+          <span><strong>PhD</strong> HMI & AI Systems</span>
         </div>
       </div>
 
       <div class="home__image">
         <div class="home__portrait-card">
           <img src="@/assets/Images/Teja_DP.jpg" alt="Teja Maheshwara" />
-          <div class="home__badge">FastAPI | AWS | RAG | Agents</div>
+          <div class="home__badge">HMI | Telepresence | Embodiment | AI Systems</div>
         </div>
       </div>
     </div>
@@ -47,9 +51,11 @@ export default {
     return {
       typedRoles: [
         "Senior Software Engineer",
+        "Computer Science PhD Researcher",
+        "IEEE ICHMS 2026 Reviewer",
         "AI / LLM Engineer",
-        "Backend Systems Developer",
-        "FastAPI & Cloud Engineer",
+        "Human-Machine Interaction Researcher",
+        "Telepresence & Embodiment Researcher",
       ],
     };
   },
@@ -102,11 +108,25 @@ export default {
 
 .home__greeting {
   max-width: 720px;
-  font-size: clamp(2.55rem, 6vw, 5.4rem);
-  line-height: 0.98;
+  font-size: clamp(2.1rem, 4.7vw, 4.6rem);
+  line-height: 1.04;
   color: var(--ink);
   font-weight: 900;
   letter-spacing: 0;
+}
+
+.home__identity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.home__name {
+  color: var(--ink);
+  font-size: clamp(1.25rem, 2.2vw, 1.7rem);
+  font-weight: 900;
 }
 
 .highlight {
@@ -237,6 +257,10 @@ export default {
 
 @media (min-width: 768px) {
   .home__metrics {
+    justify-content: flex-start;
+  }
+
+  .home__identity {
     justify-content: flex-start;
   }
 }

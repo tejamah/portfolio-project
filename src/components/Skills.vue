@@ -114,6 +114,30 @@ export default {
             "Vue.js",
           ],
         },
+        {
+          category: "Certifications & Training",
+          icon: "fas fa-certificate",
+          list: [
+            "Complete Data Science Bootcamp",
+            "Face Recognition with Python",
+            "User-centric Computing for HCI",
+            "Introduction to IoT",
+            "Joy of Computing using Python",
+            "Big Data Analytics",
+            "Full Stack Web Development",
+            "Tableau",
+          ],
+        },
+        {
+          category: "Languages",
+          icon: "fas fa-language",
+          list: [
+            "English - Professional Working",
+            "Hindi - Full Professional",
+            "Telugu - Native / Bilingual",
+            "Spanish - Limited Working",
+          ],
+        },
       ],
     };
   },

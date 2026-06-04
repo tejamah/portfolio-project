@@ -83,6 +83,19 @@ export default {
         },
         {
           img: "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
+          title: "PDFMind - Open-Source PDF RAG Assistant",
+          date: "LinkedIn Feature | 2025",
+          link: "https://www.linkedin.com/in/teja-maheshwara/",
+          description:
+            "Open-source PDF question-answering app that lets users upload documents and ask natural-language questions using grounded retrieval.",
+          highlights: [
+            "Built a live RAG workflow with document loading, chunking, sentence-transformer embeddings, FAISS vector search, and FLAN-T5 generation.",
+            "Used LangChain community tooling, transformers, Gradio, and Hugging Face-friendly architecture with no paid API dependency.",
+            "Positioned as a foundation for research tools, education assistants, legal-tech workflows, healthcare document agents, and intelligent chatbots.",
+          ],
+        },
+        {
+          img: "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
           title: "AI Research Paper Summarizer + Visual Explainer",
           date: "2024 - 2025",
           link: "https://huggingface.co/teja00007",
@@ -91,6 +104,18 @@ export default {
           highlights: [
             "Fine-tuned FLAN-T5 with LoRA for domain-aware summarization.",
             "Integrated RAG architecture and REST APIs to serve summaries dynamically through a web interface.",
+          ],
+        },
+        {
+          img: "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
+          title: "LLM-Enhanced PySpark Pipeline",
+          date: "LinkedIn Concept | 2025",
+          link: "https://www.linkedin.com/in/teja-maheshwara/",
+          description:
+            "AI-enhanced data pipeline concept exploring how LLM reasoning can collaborate with Spark-scale computation.",
+          highlights: [
+            "Explored using LLMs as reasoning layers inside data workflows instead of treating AI as only a final output generator.",
+            "Focused on cognitive data pipelines where Spark handles scale and LLMs interpret meaning across noisy, high-volume data.",
           ],
         },
         {

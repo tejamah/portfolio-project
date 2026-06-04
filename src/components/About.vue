@@ -13,20 +13,23 @@
 
       <div class="about__content">
         <p>
-          Senior Software Engineer with <strong>5+ years of experience</strong>
-          designing scalable Python-based backend systems, distributed APIs,
-          microservices, and AI-powered enterprise applications.
+          I am a <strong>Computer Science PhD researcher</strong> and Senior
+          Software Engineer in the New York City Metropolitan Area, focused on
+          building scalable, human-centric AI systems that move from research
+          ideas into usable software.
         </p>
 
         <p>
-          I work across healthcare, fintech, and intelligent automation, with
+          I bring <strong>5+ years of software engineering experience</strong>
+          across healthcare, fintech, and intelligent automation, with
           hands-on depth in <strong>FastAPI, Flask, RESTful API design, AWS,
           Docker, CI/CD, and cloud-native deployment patterns.</strong>
         </p>
 
         <p>
-          My AI work includes conversational systems, RAG pipelines, AI agents,
-          multimodal workflows, LoRA fine-tuning, and applied LLM integrations
+          My AI work includes PDF question-answering tools, conversational
+          systems, RAG pipelines, AI agents, multimodal workflows, LoRA
+          fine-tuning, and applied LLM integrations
           using platforms like
           <a
             href="https://huggingface.co/teja00007"
@@ -40,9 +43,9 @@
         </p>
 
         <p>
-          I am currently pursuing a PhD in Computer Science at Pace University,
-          focused on Artificial Intelligence and Systems, while researching
-          reliable multimodal AI and human-centered intelligent systems.
+          On LinkedIn, I share work around RAG, open-source AI apps, LLM-enhanced
+          data pipelines, human-machine interaction, telepresence, embodiment,
+          and AI systems.
         </p>
       </div>
     </div>

@@ -3,9 +3,10 @@
     <h2 class="section-title">Contact</h2>
 
     <div class="contact__details">
+      <a href="https://www.linkedin.com/in/teja-maheshwara/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="mailto:tm55063p@pace.edu">tm55063p@pace.edu</a>
       <a href="tel:+12014863082">201-486-3082</a>
-      <span>Bayonne, NJ 07002</span>
+      <span>New York City Metropolitan Area</span>
     </div>
 
     <form class="contact-form" @submit.prevent="handleSubmit">
